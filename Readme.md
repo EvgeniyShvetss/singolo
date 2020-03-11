@@ -1,1 +1,1 @@
-https://capsors.github.io/singolo1
+https://capsors.github.io/singolo/
