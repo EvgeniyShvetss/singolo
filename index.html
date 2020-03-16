@@ -14,11 +14,11 @@
             <div class="header__container">
              <div class="header__logo">SINGOLO<span>*</span></div>
                  <nav class="header__nav">
-                     <a href="#" class="header__nav-item">HOME</a><span>·</span>
-                     <a href="#" class="header__nav-item">SERVICES</a><span>·</span>
-                     <a href="#" class="header__nav-item">PORTFOLIO</a><span>·</span>
-                     <a href="#" class="header__nav-item">ABOUT</a><span>·</span>
-                     <a href="#" class="header__nav-item">CONTACT</a>
+                     <a href="#" class="header__nav-item header__nav-item-active">HOME</a><span>·</span>
+                     <a href="#services" class="header__nav-item">SERVICES</a><span>·</span>
+                     <a href="#portfolio" class="header__nav-item">PORTFOLIO</a><span>·</span>
+                     <a href="#about" class="header__nav-item">ABOUT</a><span>·</span>
+                     <a href="#contact" class="header__nav-item">CONTACT</a>
                  </nav>
             </div>
      
@@ -27,14 +27,22 @@
          <section class="slider">
             <div class="slider__container">
                 <div class="slider__arrow-left arrow"><img src="assets/img/prev.png" alt=""></div>
-                 <div class="slider__phone-left"><img src="assets/img/iphone.png" alt=""></div>
-                 <div class="slider__phone-right"><img src="assets/img/iphone-v.png" alt=""></div>
+                 <div class="slider__phone-left">
+                     <img class="iphone" src="assets/img/iphone.png" alt="">
+                     <div class="slide__phone-off"></div>
+                     <div class="slider__phone-btn"><img src="assets/img/button-ph.png" alt=""></div>
+                    </div>
+                 <div class="slider__phone-right">
+                    <img class="iphone-right" src="assets/img/iphone-v.png" alt="">
+                    <div class="slide__phone-of"></div>
+                     <div class="slider__phone-bt"><img src="assets/img/button-ph.png" alt=""></div>
+                </div>
                  <div class="slider__arrow-right arrow"><img src="assets/img/next.png" alt=""></div>
             </div>
          </section>
      
      
-         <section class="services">
+         <section id="services" class="services">
             <div class="services__container">
              <div class="services__title title-text">Our Services</div>
                  <div class="services__description">
@@ -87,15 +95,15 @@
                  </div>
             </div>
          </section>
-         <section class="portfolio">
+         <section id="portfolio" class="portfolio">
             <div class="portfolio__titel">Portfolio</div>
             <div class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
-            <div class="portfolio__links">
-                <a href="#" class="portfolio__link active">All</a>
-                <a href="#" class="portfolio__link">Web Design</a>
-                <a href="#" class="portfolio__link">Graphic Design</a>
-                <a href="#" class="portfolio__link">Artwork</a>
-            </div>
+            <ul class="portfolio__links">
+                <li class="portfolio__link active">All</li>
+                <li class="portfolio__link">Web Design</li>
+                <li class="portfolio__link">Graphic Design</li>
+                <li class="portfolio__link">Artwork</li>
+            </ul>
             <div class="portfolio__project">
                 <div class="portfolio__img"><img src="assets/img/Project.png" alt=""></div>
                 <div class="portfolio__img"><img src="assets/img/Project2.png" alt=""></div>
@@ -113,7 +121,7 @@
             </div>
         </section>
 
-        <section class="about">
+        <section id="about" class="about">
             <div class="about__title">About Us</div>
             <div class="about__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
             <div class="about__cards">
@@ -152,16 +160,16 @@
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="contact__title">Get a Quote</div>
             <div class="contact__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
             <div class="contact__column">
                 <div class="contact__column-left">
-                    <form action="">
-                        <input class="form-iput" type="text" placeholder="Name" Required>
-                        <input class="form-iput" type="text" placeholder="Email" Required>
-                        <input class="form-iput" type="text" placeholder="Subject">
-                        <textarea class="form-iput" type="text" rows="13" placeholder="Describe your project in detail..."></textarea>
+                    <form >
+                        <input id="name" class="form-iput" type="text" placeholder="Name" Required>
+                        <input id="email" class="form-iput" type="text" placeholder="Email" Required>
+                        <input id="subject" class="form-iput" type="text" placeholder="Subject">
+                        <textarea  id="textarea" class="form-iput form-iput__last" type="text" rows="13" placeholder="Describe your project in detail..."></textarea>
                         <button class="form__btn">Submit</button>
                     </form>
                 </div>
@@ -184,6 +192,22 @@
             </div>
         </footer>
     </div>
+
+    <div class="modal-active">
+        <div class="modal">
+            <div class="modal__container">
+                <div class="modal__send">The letter was sent </div>
+                <div class="modal__subjects"><span>Subject: </span><span class="modal__subject"></span></div>
+                <div class="modal__descriptions"><span>Description: </span><span class="modal__description"></span></div>
+                <button class="modal__btn">OK</button>
+            </div>
+        </div>
+    </div>
     
+    
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
