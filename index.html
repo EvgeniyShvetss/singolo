@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <header class="header">
             <div class="header__container">
              <div class="header__logo">SINGOLO<span>*</span></div>
-                 <nav class="header__nav">
-                     <a href="#" class="header__nav-item header__nav-item-active">HOME</a><span>·</span>
+                 <nav id="menu-links" class="header__nav">
+                     <a href="#slider" class="header__nav-item">HOME</a><span>·</span>
                      <a href="#services" class="header__nav-item">SERVICES</a><span>·</span>
                      <a href="#portfolio" class="header__nav-item">PORTFOLIO</a><span>·</span>
                      <a href="#about" class="header__nav-item">ABOUT</a><span>·</span>
@@ -24,18 +24,31 @@
      
          </header>
      
-         <section class="slider">
+         <section id="slider" class="slider">
             <div class="slider__container">
                 <div class="slider__arrow-left arrow"><img src="assets/img/prev.png" alt=""></div>
-                 <div class="slider__phone-left">
-                     <img class="iphone" src="assets/img/iphone.png" alt="">
-                     <div class="slide__phone-off"></div>
-                     <div class="slider__phone-btn"><img src="assets/img/button-ph.png" alt=""></div>
+                <div class="slider__list">
+                    <div class="slider__items">
+                        <div class="slider__content">
+                            <div class="slider__phone-left">
+                                <img class="iphone" src="assets/img/iphone.png" alt="">
+                                <div class="slide__phone-off"></div>
+                                <div class="slider__phone-btn"><img src="assets/img/button-ph.png" alt=""></div>
+                               </div>
+                            <div class="slider__phone-right">
+                               <img class="iphone-right" src="assets/img/iphone-v.png" alt="">
+                               <div class="slide__phone-of"></div>
+                                <div class="slider__phone-bt"><img src="assets/img/button-ph.png" alt=""></div>
+                        </div>
+                       </div>
                     </div>
-                 <div class="slider__phone-right">
-                    <img class="iphone-right" src="assets/img/iphone-v.png" alt="">
-                    <div class="slide__phone-of"></div>
-                     <div class="slider__phone-bt"><img src="assets/img/button-ph.png" alt=""></div>
+                    <div class="slider__items">
+                        <div class="slider__phone">
+                            <div class="slider__phone-back"><img src="assets/img/slider-phone-opaciti.png" alt=""></div>
+                            <div class="slider__phone-center"><img src="assets/img/slider-content.png" alt=""></div>
+                            <div class="slider__phone-back"><img src="assets/img/slider-phone-opaciti.png" alt=""></div>
+                        </div>
+                    </div>
                 </div>
                  <div class="slider__arrow-right arrow"><img src="assets/img/next.png" alt=""></div>
             </div>
@@ -95,6 +108,7 @@
                  </div>
             </div>
          </section>
+
          <section id="portfolio" class="portfolio">
             <div class="portfolio__titel">Portfolio</div>
             <div class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
@@ -167,7 +181,7 @@
                 <div class="contact__column-left">
                     <form >
                         <input id="name" class="form-iput" type="text" placeholder="Name" Required>
-                        <input id="email" class="form-iput" type="text" placeholder="Email" Required>
+                        <input id="email" class="form-iput" type="email" placeholder="Email" Required>
                         <input id="subject" class="form-iput" type="text" placeholder="Subject">
                         <textarea  id="textarea" class="form-iput form-iput__last" type="text" rows="13" placeholder="Describe your project in detail..."></textarea>
                         <button class="form__btn">Submit</button>

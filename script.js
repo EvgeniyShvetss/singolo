@@ -1,18 +1,26 @@
+document.addEventListener('scroll', onScroll);
 
-///menu
-let nav = document.querySelector('.header__nav');
-let barLink = document.querySelectorAll('.header__nav-item');
+function onScroll(event) {
+    const curPos = window.scrollY;
+    const divs = document.querySelectorAll('#wrapper > section');
+    const links = document.querySelectorAll('#menu-links a');
+    divs.forEach((el) => {
+        if(el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
+            links.forEach((a) => {
+                a.classList.remove('header__nav-item-active');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('header__nav-item-active')
+                }
+            });
+        }
+    });
+}
 
-for (let i = 0; i < barLink.length; i++) {
-    barLink[i].onclick = navItem;
-};
-
-function navItem() {
-    for (let i = 0; i < barLink.length; i++) {
-        barLink[i].classList.remove('header__nav-item-active');
-    }
-    this.classList.add('header__nav-item-active');
-};
+// window.addEventListener('scroll', function() {
+//    let log =  document.getElementById('showScroll');
+//    console.log(pageYOffset + 'px');
+   
+//   });
 
 
 ///phone
@@ -32,21 +40,41 @@ phoneBt.onclick = function() {
 
 
 
+///portfolio link
+const portfolioItems = document.querySelectorAll('.portfolio__img')
+
+let portfolioLink = document.querySelectorAll('.portfolio__link');
+portfolioLink.forEach( function(el) {
+    
+    el.addEventListener('click', function(e) {
+        const lastPortfolioItem = document.querySelector('.portfolio__img:last-child')
+        let parent = lastPortfolioItem.parentElement
+        portfolioLink.forEach(el => {
+            el.classList.remove('active');
+            
+        });
+        e.target.classList.add('active');
+        parent.prepend(lastPortfolioItem)
+    })
+    
+});
+
+
+
 ///img active
 let portfolioImg = document.querySelectorAll('.portfolio__img img');
 
 portfolioImg.forEach(element => {
-    element.onclick = imgActive;
+    element.onclick = function imgActive() {
+        portfolioImg.forEach(element => {
+            element.classList.remove('portfolio__img-active')
+        });
+        this.classList.add('portfolio__img-active')
+        
+    };
 });
 
- 
-function imgActive() {
-    portfolioImg.forEach(element => {
-        element.classList.remove('portfolio__img-active')
-    });
-    this.classList.add('portfolio__img-active')
-    
-};
+
 
 ////form
 let formBtn = document.querySelector('.form__btn');
@@ -87,27 +115,18 @@ modal.onclick = function() {
     modal.classList.remove('modal-show');
 };
 
-///portfolio link
-
-let portfolioLink = document.querySelectorAll('.portfolio__link');
-portfolioLink.forEach( function(el) {
-    
-    el.addEventListener('click', function(e) {
-        portfolioLink.forEach(el => {
-            el.classList.remove('active')
-        });
-        e.target.classList.add('active')
-    })
-    
-});
 
 
-// function remove(){
-//     let imageInside = document.querySelectorAll('.image__inside');
-//     imageInside.forEach(function(el){
-//         el.addEventListener('click', function(e){
-//             (e.target.classList.contains('display-none')) ? e.target.classList.remove('display-none') : e.target.classList.add('display-none');
-//         })
-//     })
-//     }
-//     remove();
+
+// slider
+
+
+let slides = document.querySelectorAll('.slider__items');
+let next = document.querySelector('.slider__arrow-right');
+let prew = document.querySelector('.slider__arrow-left');
+
+
+
+
+
+
