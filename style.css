@@ -96,7 +96,6 @@ ul, li {
     width: 1020px;
     display: flex;
     transition: 1s;
-    position: relative;
     height: 696px;
 }
 
@@ -104,9 +103,7 @@ ul, li {
     display: flex;
     transition: all ease 1s;
     width: 1020px;
-    position: absolute;
-    left: 0;
-    top: 0;
+ 
 }
 
 .slider__content {
@@ -164,7 +161,7 @@ ul, li {
 .slider__phone-btn {
     position: absolute;
     left: 86px;
-    bottom: 63px;
+    bottom: 7px;
 }
 .slider__phone-btn img, .slider__phone-bt img{
     cursor: pointer;
