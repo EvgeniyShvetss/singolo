@@ -23,13 +23,26 @@ function onScroll(event) {
 //   });
 
 ////responsive menu
-let responsiveBtn = document.querySelector('.responsiv-menu');
-responsiveBtn.addEventListener('click', function (event) {
+
+
+function responsivMenu() {
+    let responsiveBtn = document.querySelector('.responsiv-menu');
+    responsiveBtn.addEventListener('click', function (event) {
     
     let menuLinks = document.querySelector('#menu-links');
     menuLinks.classList.toggle('header__nav-active');
-    responsiveBtn.classList.toggle('menu__transform'); 
-})
+    responsiveBtn.classList.toggle('menu__transform');
+    document.querySelectorAll('.header__nav-item').forEach(element => {
+        element.addEventListener('click', function () {
+            menuLinks.classList.remove('header__nav-active');
+            responsiveBtn.classList.remove('menu__transform');
+    });
+    })
+    
+});
+}
+
+responsivMenu();
 
 // responsiveBtn.onclick = function(event) {
 //     let target = event.target
@@ -47,17 +60,17 @@ let phoneOff = document.querySelector('.slide__phone-off');
 let phoneBt = document.querySelector('.slider__phone-bt img');
 let phoneOf = document.querySelector('.slide__phone-of');
 
-phoneBtn.addEventListener('click', function (e) {
-  console.log(e.target);
+// phoneBtn.addEventListener('click', function (e) {
+//   console.log(e.target);
   
-    phoneOff.classList.toggle('slide__phone-on');
-})
+//     phoneOff.classList.toggle('slide__phone-on');
+// })
 
 
 
-phoneBt.onclick = function(e) {
-    phoneOf.classList.toggle('slide__phone-on');
-}
+// phoneBt.onclick = function(e) {
+//     phoneOf.classList.toggle('slide__phone-on');
+// }
 
 
 
