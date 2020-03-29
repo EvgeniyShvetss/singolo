@@ -22,19 +22,40 @@ function onScroll(event) {
    
 //   });
 
+////responsive menu
+let responsiveBtn = document.querySelector('.responsiv-menu');
+responsiveBtn.addEventListener('click', function (event) {
+    
+    let menuLinks = document.querySelector('#menu-links');
+    menuLinks.classList.toggle('header__nav-active');
+    responsiveBtn.classList.toggle('menu__transform'); 
+})
+
+// responsiveBtn.onclick = function(event) {
+//     let target = event.target
+//     console.log(target);
+    
+    
+// }
+
+
 
 ///phone
-
-let phoneBtn = document.querySelector('.slider__phone-btn');
+let phoneContainer = document.querySelector('.slider__list')
+let phoneBtn = document.querySelector('.slider__phone-btn img');
 let phoneOff = document.querySelector('.slide__phone-off');
-let phoneBt = document.querySelector('.slider__phone-bt');
+let phoneBt = document.querySelector('.slider__phone-bt img');
 let phoneOf = document.querySelector('.slide__phone-of');
 
-phoneBtn.onclick = function() {
+phoneBtn.addEventListener('click', function (e) {
+  console.log(e.target);
+  
     phoneOff.classList.toggle('slide__phone-on');
-}
+})
 
-phoneBt.onclick = function() {
+
+
+phoneBt.onclick = function(e) {
     phoneOf.classList.toggle('slide__phone-on');
 }
 
@@ -120,8 +141,9 @@ modal.onclick = function() {
 
 // slider
 
-
+let sliderlist = document.querySelector('.slider__list')
 let slides = document.querySelectorAll('.slider__items');
+let slid = document.querySelector('.slider__items');
 let next = document.querySelector('.slider__arrow-right');
 let prew = document.querySelector('.slider__arrow-left');
 
@@ -129,4 +151,44 @@ let prew = document.querySelector('.slider__arrow-left');
 
 
 
+// var slideIndex = 0;
+// showSlides(slideIndex);
+
+
+next.addEventListener('click', function() {
+    let d = sliderlist.firstElementChild;
+    let clone = d.cloneNode(true)
+    sliderlist.removeChild(d);
+    sliderlist.appendChild(clone);
+   
+})
+
+
+prew.addEventListener('click', function() {
+    let d = sliderlist.firstElementChild;
+    let clone = d.cloneNode(true)
+    sliderlist.removeChild(d);
+    sliderlist.appendChild(clone);
+})
+
+
+// function currentSlide(n) {
+//     showSlides(slideIndex = n);
+// }
+
+
+// function showSlides(n) {
+//     let slides = document.querySelectorAll('.slider__items');
+//     if (n > slides.length) {
+//       slideIndex = 1
+//     }
+//     if (n < 1) {
+//         slideIndex = slides.length
+//     }
+//     for (i = 0; i < slides.length; i++) {
+//         slides[i].classList.remove('animate-slide');
+//     }
+ 
+//     slides[slideIndex - 1].classList.add('animate-slide');
+// }
 
