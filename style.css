@@ -15,6 +15,10 @@ a {
     color: #ffffff;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 ul, li {
     padding: 0;
     margin: 0;
@@ -99,19 +103,21 @@ ul, li {
 }
 
 .slider__list {
-    width: 1020px;
     display: flex;
     transition: 1s;
     height: 696px;
     overflow: hidden;
 }
 
-.slider__items {
+.slider__item {
     display: flex;
     transition: all ease 1s;
-    max-width: 1020px;
     width: 100%;
- 
+}
+
+.slide-track {
+    display: flex;
+    /* transition: all .8s; */
 }
 
 .slider__content {
@@ -124,12 +130,12 @@ ul, li {
 }
 
 .slider__phone {
-    width: 1020px;
     background: #648BF0;
     display: flex;
     padding-top: 150px;
     padding-bottom: 86px;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .slider__phone-back {
@@ -138,6 +144,7 @@ ul, li {
 
 .arrow {
     position: absolute;
+    z-index: 10;
 }
 
 .arrow:hover{
